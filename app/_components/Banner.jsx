@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <main className="relative w-full h-[75vh] z-10">
       <Image
-        src="/giphy.gif"
+        src="/stgif.gif"
         alt="banner"
         fill
         className="object-cover"
@@ -19,7 +19,7 @@ const Banner = () => {
 
       <div className="absolute bottom-12 left-4 text-left text-white px-4">
         <h1 className="text-5xl font-bold drop-shadow-lg leading-[50px]">
-          Harsh Kurware - A Web Developer <br />
+          Harsh Kurware - A Web<br /> Developer 
           and Designer
         </h1>
         <p className="mt-4 text-lg max-w-8/12 drop-shadow-md">
