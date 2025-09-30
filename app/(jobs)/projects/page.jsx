@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "AI Saas App",
-    desc: "AI-based Saas app for all your work done in one plce.",
+    desc: "AI-based Saas app for all your AI work done in one plce.",
     img: "/projImages/1.png",
     stack: ["React.js", "Node.js", "PostgreSQL", "Express.js"],
     github: "https://github.com/vincentdkafka/AI-Saas-App",
@@ -25,42 +25,51 @@ const projects = [
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    desc: "Real-time weather data using OpenWeather API.",
+    title: "Grow-bit AI",
+    alt: "Grow-bit photo",
+    desc: "AI based platform to take, grade your interview and make you ready for placements",
     img: "/images/weather.jpg",
-    stack: ["React", "Chart.js", "API"],
-    github: "https://github.com/yourusername/project3",
+    stack: ["Next.js", "Google Auth", "TailwindCSS", "Vapi"],
+    github: "https://github.com/vincentdkafka/Growbit-AI",
   },
   {
     id: 4,
-    title: "E-Commerce Store",
-    desc: "Full-stack e-commerce store with payment integration.",
-    img: "/images/ecommerce.jpg",
-    stack: ["Next.js", "Stripe", "MongoDB"],
-    github: "https://github.com/yourusername/project4",
+    title: "Stories App",
+    desc: "A full-stack web application where users can create, view, and manage short stories",
+    img: "/projImages/stories-app.png",
+      stack: ["React.js", "Firebase","Typescript", "MongoDB"],
+    github: "https://github.com/vincentdkafka/Stories-App-Mern",
   },
   {
     id: 5,
-    title: "Chat Application",
-    desc: "Real-time chat with WebSocket and authentication.",
-    img: "/images/chat.jpg",
-    stack: ["React", "Node.js", "Socket.io"],
-    github: "https://github.com/yourusername/project5",
+    title: "Google drive clone",
+    desc: "Realtime Gdrive clone with 5gb storage and OTP verification",
+    img: "/projImages/outerstella.png",
+    stack: ["Next.js", "App-write", "TailwindCSS", "Nodejs"],
+    github: "https://github.com/vincentdkafka/G-drive-clone",
   },
   {
     id: 6,
-    title: "Task Manager",
-    desc: "A Kanban-style task management system.",
-    img: "/images/task.jpg",
-    stack: ["React", "Redux", "Firebase"],
-    github: "https://github.com/yourusername/project6",
+    title: "AI-Resume-Analyst",
+    desc: "Your free ATS checker, Analysis and grade your resume",
+    img: "/projImages/resume.png",
+    stack: ["Python", "OpenAI", "Streamlit"],
+    github: "https://github.com/vincentdkafka/AI-Resume-Analyst.",
+  },
+    {
+    id: 7,
+    title: "Research Assistant with LangChain",
+    desc: "A research assistant application to help you generate  and help for your research papers.",
+    img: "/projImages/code.png.png",
+    stack: ["Python", "Langchain", "OpenAI"],
+    github: "https://github.com/vincentdkafka/AI-Research-App.",
   },
 ];
 
 const Page = () => {
   return (
     <section className="py-8 px-5 md:px-20 bg-black min-h-screen">
-      <h2 className="text-3xl text-white font-bold mb-10 text-center">My Projects</h2>
+      <h2 className="text-3xl text-[#ED1C24] font-bold mb-10 text-center">My Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <div
@@ -78,7 +87,7 @@ const Page = () => {
             </div>
 
             <div className="p-4 flex flex-col flex-1">
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-[24px] font-semibold mb-2">{project.title}</h3>
               <p className="text-gray-600 text-sm mb-3">{project.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.stack.map((tech, index) => (
@@ -89,7 +98,7 @@ const Page = () => {
               </div>
 
               <div className="mt-auto">
-                <Button asChild variant="default" className="w-full gap-2">
+              <Button asChild variant="default" className="w-full gap-2">
                   <a
                     href={project.github}
                     target="_blank"

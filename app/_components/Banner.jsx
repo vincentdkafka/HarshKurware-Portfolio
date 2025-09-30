@@ -34,7 +34,7 @@ const Banner = () => {
 
         <div className="flex gap-4 mt-4">
           <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button className="h-10 px-8 text-base bg-white text-black rounded-sm hover:bg-gray-200">
+            <Button className="h-12 w-32 px-8 text-base bg-white text-black rounded-sm hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -54,7 +54,7 @@ const Banner = () => {
           </Link>
 
           <Link href="https://www.linkedin.com/in/harshkurware22/">
-            <Button className=" h-10 px-8 text-base bg-gray-700 text-white rounded-sm hover:bg-gray-600">
+            <Button className=" h-12 w-32 px-8 text-base bg-gray-700 text-white rounded-sm hover:bg-gray-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

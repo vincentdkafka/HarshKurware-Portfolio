@@ -1,78 +1,55 @@
+"use client";
+import { SiReact, SiJavascript, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPython, SiMysql, SiPostgresql, SiDocker, SiVercel, SiFigma, SiAdobephotoshop, SiNextdotjs } from "react-icons/si";
 
-"use client"
-
-import React from "react";
-import {
-  Code,
-  Server,
-  Boxes,
-  PenTool,
-  Database,
-  Cloud,
-  Monitor,
-  Palette,
-} from "lucide-react";
-
-const skills = [
-  {
-    category: "Frontend",
-    items: [
-      { name: "React", icon: <Code className="w-10 h-10 text-sky-500" /> },
-      {
-        name: "Next.js",
-        icon: <Monitor className="w-10 h-10 text-black dark:text-white" />,
-      },
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      {
-        name: "Node.js",
-        icon: <Server className="w-10 h-10 text-green-600" />,
-      },
-      {
-        name: "MongoDB",
-        icon: <Database className="w-10 h-10 text-green-700" />,
-      },
-    ],
-  },
-  {
-    category: "DevOps",
-    items: [
-      { name: "Docker", icon: <Boxes className="w-10 h-10 text-blue-600" /> },
-      { name: "Cloud", icon: <Cloud className="w-10 h-10 text-blue-500" /> },
-    ],
-  },
-  {
-    category: "UI/UX",
-    items: [
-      { name: "Figma", icon: <PenTool className="w-10 h-10 text-pink-500" /> },
-      {
-        name: "Photoshop",
-        icon: <Palette className="w-10 h-10 text-blue-400" />,
-      },
-    ],
-  },
-];
+const skills = {
+  Frontend: [
+    { name: "React", icon: <SiReact className="w-10 h-10 text-[#61DAFB]" /> },
+    { name: "JavaScript", icon: <SiJavascript className="w-10 h-10 text-yellow-400" /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss className="w-10 h-10 text-sky-400" /> },
+    { name: "Next.Js", icon: <SiNextdotjs className="w-10 h-10 " /> },
+    { name: "Python", icon: <SiPython className="w-10 h-10 text-blue-400" /> },
+    
+  ],
+  Backend: [
+    { name: "Node.js", icon: <SiNodedotjs className="w-10 h-10 text-green-500" /> },
+    { name: "Express.js", icon: <SiExpress className="w-10 h-10 text-gray-300" /> },
+  ],
+  Database: [
+    { name: "MongoDB", icon: <SiMongodb className="w-10 h-10 text-green-400" /> },
+    { name: "MySQL", icon: <SiMysql className="w-10 h-10 text-blue-400" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="w-10 h-10 text-sky-600" /> },
+  ],
+  Deployment: [
+    { name: "Docker", icon: <SiDocker className="w-10 h-10 text-sky-400" /> },
+    { name: "Vercel", icon: <SiVercel className="w-10 h-10 text-white" /> },
+  ],
+  "UI / UX": [
+    { name: "Figma", icon: <SiFigma className="w-10 h-10 text-pink-500" /> },
+    { name: "Photoshop", icon: <SiAdobephotoshop className="w-10 h-10 text-blue-500" /> },
+  ],
+};
 
 const Skills = () => {
   return (
-    <div className="space-y-12 px-6 md:px-12 py-12">
-      {skills.map((skillGroup) => (
-        <div key={skillGroup.category}>
-          {/* Heading */}
-          <h2 className="text-2xl flex center text-white font-bold mb-4">{skillGroup.category}</h2>
+        <div className="min-h-screen bg-black text-white px-6 md:px-16 py-16">
+      <h1 className="text-4xl font-bold mb-12 text-center text-[#ED1C24]">
+        My Skills
+      </h1>
 
-          {/* Netflix-style horizontal scroll */}
-          <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-4">
-            {skillGroup.items.map((item) => (
+      {Object.entries(skills).map(([category, items]) => (
+        <div key={category} className="mb-16">
+          <h2 className="text-2xl font-semibold mb-6 border-l-4 border-[#ED1C24] pl-3">
+            {category}
+          </h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {items.map((skill) => (
               <div
-                key={item.name}
-                className="min-w-[150px] bg-white dark:bg-neutral-900 rounded-xl shadow-md p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform"
+                key={skill.name}
+                className="bg-neutral-900 border border-neutral-800 rounded-xl flex flex-col items-center justify-center gap-3 py-6 px-4 shadow-md hover:shadow-red-900/40 hover:scale-105 transition"
               >
-                <div className="mb-2">{item.icon}</div>
-                <p className="font-medium">{item.name}</p>
+                {skill.icon}
+                <p className="text-sm font-medium">{skill.name}</p>
               </div>
             ))}
           </div>

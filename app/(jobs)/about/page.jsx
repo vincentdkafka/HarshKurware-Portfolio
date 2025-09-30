@@ -1,66 +1,87 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import { useForm } from "@formspree/react";
-
 
 const page = () => {
-  
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 bg-gradient-to-b from-gray-50 to-gray-200 dark:from-neutral-900 dark:to-neutral-950 text-center">
-      {/* Profile Image */}
-      <div className="relative mb-8">
-        <div className="w-150 h-120 overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800 mx-auto">
+    <>
+      <section className="flex flex-col px-36 md:flex-row h-screen w-screen items-center justify-center gap-10 max-md:px-4 bg-black">
+        <div className="relative shadow-2xl rounded-2xl overflow-hidden shrink-0">
           <img
-            src="/myphoto.jpg" // replace with your image path
-            alt="My Photo"
-            className="w-full h-full object-cover"
+            className=" object-cover rounded-2xl"
+            src="myphoto.jpg"
+            alt=""
+            width={600}
+            height={300}
           />
         </div>
-        {/* Name Floating between image and text */}
-        <h1 className="text-4xl md:text-5xl font-extrabold mt-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-pulse">
-          You are with Harsh Kurware
-        </h1>
-      </div>
+        <div className="text-white">
+          <h1 className="text-4xl text-[#ED1C24] py-6 uppercase font-bold">About Me</h1>
 
-      {/* About Text */}
-      <div className="max-w-3xl space-y-6 text-xl text-gray-700 dark:text-gray-300">
-        <p>
-          I’m a curious creator who blends{" "}
-          <span className="font-semibold">design</span> and
-          <span className="font-semibold"> development</span> into digital
-          experiences that feel alive. My journey has taken me through the
-          worlds of frontend sorcery, backend architecture, and the fine art of
-          turning coffee into code.
-        </p>
-        <p>
-          When I’m not busy debugging reality, you’ll find me sketching
-          interfaces, experimenting with new frameworks, or pushing pixels until
-          they behave. I believe good design isn’t just seen—it’s{" "}
-          <span className="italic">felt</span>.
-        </p>
-        <p>
-          This portfolio is more than a showcase—it’s a playground where
-          creativity meets technology. Welcome to my corner of the internet.
-        </p>
-      </div>
+          <p>
+            I’m a curious creator who blends{" "}
+            <span className="font-semibold">design</span> and
+            <span className="font-semibold"> development</span> into digital
+            experiences that feel alive. My journey has taken me through the
+            worlds of frontend sorcery, backend architecture, and the fine art
+            of turning coffee into code.
+          </p>
+          <p className="py-4">
+            When I’m not busy debugging reality, you’ll find me sketching
+            interfaces, experimenting with new frameworks, or pushing pixels
+            until they behave. I believe good design isn’t just seen—it’s{" "}
+            <span className="italic">felt</span>.
+          </p>
+          <p>
+            This portfolio is more than a showcase—it’s a playground where
+            creativity meets technology. Welcome to my corner of the internet.
+          </p>
 
-      <div className="flex gap-4 mt-8">
-      {/* Black Button → Projects */}
-      <Link href="/projects">
-        <Button className="bg-black text-white text-xl hover:bg-neutral-800 transition rounded-lg px-10 py-4">
-          View Projects
-        </Button>
-      </Link>
+          <div className="flex gap-6">
+            <Link href="contact">
+              <button className="flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-gradient-to-r from-[#ff7d7d] to-[#ff1c1c] py-3 px-8 rounded-full text-white">
+                <span>Contact me</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
 
-      {/* Netflix Red Button → Contact */}
-      <Link href="/contact">
-        <Button className="bg-red-600 text-white text-xl hover:bg-red-700 transition rounded-lg px-10 py-4">
-          Contact Me
-        </Button>
-      </Link>
-    </div>
-    </div>
+            <Link href="/projects">
+              <button className="flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-white py-3 px-8 rounded-full text-black">
+                <span>View Project</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
