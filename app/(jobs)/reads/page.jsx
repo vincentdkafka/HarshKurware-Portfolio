@@ -58,7 +58,7 @@ const Reads = () => {
     <div className="min-h-screen bg-black text-white py-16 px-6 md:px-16">
       {/* Hero */}
       <h1 className="text-4xl text-[#ED1C24] md:text-5xl font-bold text-center mb-4">
-        📚 My Reads
+         My Reads
       </h1>
       <p className="text-center text-neutral-400 max-w-2xl mx-auto mb-12">
         A curated collection of books I’m reading, re-reading, and have
