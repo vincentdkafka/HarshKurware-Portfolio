@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <main className="relative w-full h-[75vh] z-10">
       <Image
-        src="/stgif.gif"
+        src="/dustin.webp"
         alt="banner"
         fill
         className="object-cover"
