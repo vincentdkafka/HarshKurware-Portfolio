@@ -1,40 +1,102 @@
 "use client";
-import React from "react";
-import { Film, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Music = () => {
+  const [topTracks, setTopTracks] = useState([]);
+  const [topArtists, setTopArtists] = useState([]);
+  const [albums, setAlbums] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/spotify/top-tracks")
+      .then((res) => res.json())
+      .then((data) => setTopTracks(data.items || []));
+
+    fetch("/api/spotify/top-artists")
+      .then((res) => res.json())
+      .then((data) => setTopArtists(data.items || []));
+
+    fetch("/api/spotify/albums")
+      .then((res) => res.json())
+      .then((data) => {
+        setAlbums(data.items || []);
+      });
+  }, []);
+
   return (
-<div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-hidden">
-      
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-red-700 rounded-full opacity-20 animate-pulse blur-3xl"></div>
-      <div className="absolute top-0 right-1/4 w-64 h-64 bg-red-700 rounded-full opacity-20 animate-pulse blur-3xl"></div>
+    <div className="bg-black text-white min-h-screen p-8 space-y-12">
+      <h1 className="text-4xl font-bold text-red-600 mb-8">
+        My Spotify Dashboard
+      </h1>
 
-      <div className="z-10 text-center px-6">
-        <Film className="mx-auto w-16 h-16 text-[#ED1C24] animate-bounce mb-6" />
-        <h1 className="text-6xl md:text-7xl font-extrabold tracking-wider mb-4">
-          Coming Soon
-        </h1>
-        <p className="text-xl md:text-2xl text-neutral-400 mb-6">
-          Something exciting is brewing… 🎬
-        </p>
-        
-        <div className="flex items-center justify-center gap-4 text-red-600 font-bold text-xl md:text-2xl">
-          <Clock className="w-6 h-6" />
-          <span>Launching Soon!</span>
+
+      <div className="grid md:grid-cols-2 gap-8">
+
+        <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+          <h2 className="text-2xl font-semibold text-red-500 mb-4">
+            Top Tracks
+          </h2>
+          <ul className="space-y-2">
+            {topTracks.map((t) => (
+              <li
+                key={t.id}
+                className="hover:text-red-400 transition-colors duration-200"
+              >
+                {t.name} — {t.artists.map((a) => a.name).join(", ")}
+              </li>
+            ))}
+          </ul>
         </div>
-        
-        <a
-          href="/"
-          className="mt-8 inline-block px-8 py-3 bg-red-600 hover:bg-red-700 transition rounded-full font-semibold shadow-lg"
-        >
-          Stay Tuned
-        </a>
+
+
+        <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+          <h2 className="text-2xl font-semibold text-red-500 mb-4">
+            Top Artists
+          </h2>
+          <ul className="space-y-2">
+            {topArtists.map((a) => (
+              <li
+                key={a.id}
+                className="hover:text-red-400 transition-colors duration-200"
+              >
+                {a.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center z-0">
-        <Film className="w-32 h-32 text-red-800 opacity-10 animate-spin-slow" />
-      </div>
-    </div>  )
-}
 
-export default Music
+      <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+        <h2 className="text-2xl font-semibold text-red-500 mb-4">
+          Saved Albums
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+          {albums.map((item) => {
+            const album = item.album;
+            return (
+              <div
+                key={album.id}
+                className="bg-gray-800 w-48 rounded-md overflow-hidden shadow-md hover:scale-105 transition-transform duration-200"
+              >
+                {album.images?.[0]?.url ? (
+                  <img
+                    src={album.images[0].url}
+                    alt={album.name}
+                    className="w-full h-40 object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-40 bg-gray-700 flex items-center justify-center text-gray-400">
+                    No Image
+                  </div>
+                )}
+                <div className="p-2 text-center font-medium">{album.name}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Music;
