@@ -1,4 +1,6 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Music = () => {
@@ -24,13 +26,20 @@ const Music = () => {
 
   return (
     <div className="bg-black text-white min-h-screen p-8 space-y-12">
-      <h1 className="text-4xl font-bold text-red-600 mb-8">
-        My Spotify Dashboard
-      </h1>
-
+      <div className="flex justify-between">
+        {" "}
+        <h1 className="text-4xl font-bold text-red-600 mb-8">
+          My Spotify Dashboard
+        </h1>
+        <Link href="https://open.spotify.com/user/31ix7aup3m2rlgfa7swrgk5zbzku?si=cba611326f674fbe">
+          {" "}
+          <Button className="text-black text-xl px-8 py-6 rounded-4xl bg-green-700 mb-6 hover:bg-green-900">
+            View Spotify
+          </Button>
+        </Link>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-8">
-
         <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
           <h2 className="text-2xl font-semibold text-red-500 mb-4">
             Top Tracks
@@ -46,7 +55,6 @@ const Music = () => {
             ))}
           </ul>
         </div>
-
 
         <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
           <h2 className="text-2xl font-semibold text-red-500 mb-4">
@@ -64,7 +72,6 @@ const Music = () => {
           </ul>
         </div>
       </div>
-
 
       <div className="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
         <h2 className="text-2xl font-semibold text-red-500 mb-4">
