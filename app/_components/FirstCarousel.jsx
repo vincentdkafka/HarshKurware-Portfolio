@@ -62,7 +62,6 @@ const items2 = [
   },
 ];
 
-// Carousel component
 const Carousel = ({ title, items }) => {
   const containerRef = useRef(null);
 
@@ -76,18 +75,21 @@ const Carousel = ({ title, items }) => {
   };
 
   return (
-    <div className="mt-6">
-      <h1 className="text-white text-xl font-semi-bold py-4 px-6">{title}</h1>
+    <div className="mt-6 w-full px-3 sm:px-6">
+      <h1 className="text-white text-lg sm:text-xl md:text-2xl font-semibold py-3 px-2 md:px-6">
+        {title}
+      </h1>
+
       <div className="relative">
-        {/* Left button */}
+        {/* Left button (hidden on mobile) */}
         <button
           onClick={() => scroll("left")}
-          className=" mx-4 absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
+          className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -98,37 +100,54 @@ const Carousel = ({ title, items }) => {
           </svg>
         </button>
 
-        {/* Cards */}
+        {/* Cards container */}
         <div
           ref={containerRef}
-          className="flex gap-4 px-6 mb-6 snap-x snap-mandatory overflow-hidden"
+          className="
+            flex flex-col sm:flex-row 
+            gap-4 px-2 sm:px-6 mb-6 
+            snap-y sm:snap-x snap-mandatory 
+            overflow-y-auto sm:overflow-x-auto 
+            scrollbar-hide scroll-smooth
+          "
         >
           {items.map((item) => (
             <Link key={item.id} href={item.link}>
-              <div className="relative min-w-[350px] h-[200px] bg-gray-800 text-white rounded-xl snap-center shrink-0 overflow-hidden cursor-pointer">
+              <div
+                className="
+                  relative 
+                  w-full sm:min-w-[300px] md:min-w-[350px] 
+                  h-[180px] sm:h-[200px] md:h-[220px] 
+                  bg-gray-800 text-white 
+                  rounded-xl snap-center shrink-0 overflow-hidden cursor-pointer 
+                  hover:scale-105 transition-transform duration-300
+                "
+              >
                 <img
                   src={item.img}
                   alt={item.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
+                <div className="absolute inset-0 bg-black/25 backdrop-blur-[2px]" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-lg font-bold">{item.title}</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-center px-3">
+                    {item.title}
+                  </h2>
                 </div>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Right button */}
+        {/* Right button (hidden on mobile) */}
         <button
           onClick={() => scroll("right")}
-          className="mx-4 absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
+          className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -143,10 +162,9 @@ const Carousel = ({ title, items }) => {
   );
 };
 
-// Main wrapper with two carousels
 const FirstCarousel = () => {
   return (
-    <div className="flex flex-col -mt-4">
+    <div className="flex flex-col -mt-2 md:-mt-4">
       <Carousel title="Today's Top Picks for Recruiter" items={items1} />
       <Carousel title="Other Things for Recruiter" items={items2} />
     </div>
