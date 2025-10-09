@@ -33,7 +33,7 @@ const blogs = [
 const Blog = () => {
   return (
 <div className="min-h-screen bg-black text-white py-16 px-6 md:px-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-[#ED1C24] mb-12">
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-[#ED1C24] mb-10">
          My Blogs
       </h1>
       <p className="text-center text-neutral-400 max-w-3xl mx-auto mb-12">
