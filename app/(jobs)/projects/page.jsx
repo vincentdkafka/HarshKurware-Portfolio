@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "AI Saas App",
-    desc: "AI-based Saas app for all your AI work done in one plce.",
+    desc: "AI-based Saas app for all your AI work done in one place.",
     img: "/projImages/1.png",
     stack: ["React.js", "Node.js", "PostgreSQL", "Express.js"],
     github: "https://github.com/vincentdkafka/AI-Saas-App",
