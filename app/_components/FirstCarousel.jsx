@@ -62,7 +62,7 @@ const items2 = [
   },
 ];
 
-const Carousel = ({ title, items }) => {
+const Carousel = ({ title, items, hideScrollbar }) => {
   const containerRef = useRef(null);
 
   const scroll = (direction) => {
@@ -81,35 +81,26 @@ const Carousel = ({ title, items }) => {
       </h1>
 
       <div className="relative">
-        {/* Left button (hidden on mobile) */}
         <button
           onClick={() => scroll("left")}
           className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
 
-        {/* Cards container */}
         <div
           ref={containerRef}
-          className="
+          className={`
             flex flex-col sm:flex-row 
             gap-4 px-2 sm:px-6 mb-6 
             snap-y sm:snap-x snap-mandatory 
             overflow-y-auto sm:overflow-x-auto 
-            scrollbar-hide scroll-smooth
-          "
+            scroll-smooth
+            scrollbar-none
+            ${hideScrollbar ? "scrollbar-hide" : ""}
+          `}
         >
           {items.map((item) => (
             <Link key={item.id} href={item.link}>
@@ -139,21 +130,11 @@ const Carousel = ({ title, items }) => {
           ))}
         </div>
 
-        {/* Right button (hidden on mobile) */}
         <button
           onClick={() => scroll("right")}
           className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70 transition"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </button>
@@ -165,10 +146,11 @@ const Carousel = ({ title, items }) => {
 const FirstCarousel = () => {
   return (
     <div className="flex flex-col -mt-2 md:-mt-4">
-      <Carousel title="Today's Top Picks for Recruiter" items={items1} />
+      <Carousel title="Today's Top Picks for Recruiter" items={items1}  />
       <Carousel title="Other Things for Recruiter" items={items2} />
     </div>
   );
 };
+
 
 export default FirstCarousel;
