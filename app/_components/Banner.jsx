@@ -17,7 +17,7 @@ const Banner = () => {
       <div className="absolute bottom-0 left-0 w-full h-36 bg-gradient-to-t from-black to-transparent" />
 
       <div className="absolute bottom-8 sm:bottom-12 left-2 sm:left-4 text-left text-white px-2 sm:px-4 max-w-[95%] sm:max-w-[80%] md:max-w-[70%]">
-        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold drop-shadow-lg leading-[40px] sm:leading-[40px] md:leading-[45px] lg:leading-[60px]">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg leading-[40px] sm:leading-[40px] md:leading-[45px] lg:leading-[50px]">
           Harsh Kurware - A Web
           <br className="hidden sm:block" /> Developer and Designer
         </h1>
