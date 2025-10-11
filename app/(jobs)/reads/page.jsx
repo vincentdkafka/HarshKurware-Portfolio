@@ -5,10 +5,10 @@ import React from "react";
 const books = {
   current: [
     {
-      title: "Kafka on the Shore",
-      author: "Haruki Murakami",
-      cover: "/books/kafka.jpg",
-      link: "https://www.goodreads.com/book/show/4929.Kafka_on_the_Shore",
+      title: "Dark Matter",
+      author: "Blake Crouch",
+      cover: "/books/dark.jpg",
+      link: "https://www.goodreads.com/book/show/27833670-dark-matter",
     },
     {
       title: "Yayati",
