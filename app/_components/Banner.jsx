@@ -54,7 +54,7 @@ const Banner = () => {
             </Button>
           </Link>
 
-          <Link href="https://www.linkedin.com/in/harshkurware22/">
+          <Link href="https://www.linkedin.com/in/harshkurware22/" target="_blank" rel="noopener noreferrer">
             <Button className="h-10 sm:h-12 w-28 sm:w-32 px-6 sm:px-8 text-sm sm:text-base bg-gray-700 text-white rounded-sm hover:bg-gray-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
