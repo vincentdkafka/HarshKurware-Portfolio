@@ -9,7 +9,6 @@ const page = () => {
         w-full min-h-screen px-6 sm:px-12 md:px-24 lg:px-36 
         pt-24 md:pt-0 overflow-hidden"
       >
-        {/* Image */}
         <div className="relative shadow-2xl rounded-2xl overflow-hidden shrink-0 w-full md:w-auto">
           <img
             className="object-cover rounded-2xl w-full h-auto max-w-[600px]"
@@ -20,7 +19,6 @@ const page = () => {
           />
         </div>
 
-        {/* Text content */}
         <div className="max-w-xl text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl text-[#ED1C24] py-6 uppercase font-bold">
             About Me
@@ -47,7 +45,19 @@ const page = () => {
             creativity meets technology. Welcome to my corner of the internet.
           </p>
 
-          {/* Buttons */}
+          <div className="mt-8 text-sm sm:text-base text-gray-300">
+            <p>
+              {" "}
+              <span className="font-semibold text-white">
+                Bachelor of Engineering in Computer Engineering
+              </span>
+            </p>
+            <p>
+              Atharva College of Engineering, Mumbai —{" "}
+              <span className="italic">Graduating in 2026</span>
+            </p>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-8 w-full">
             <Link href="/contact" className="w-full sm:w-auto">
               <button
