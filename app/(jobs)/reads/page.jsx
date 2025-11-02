@@ -11,10 +11,10 @@ const books = {
       link: "https://www.goodreads.com/book/show/27833670-dark-matter",
     },
     {
-      title: "Yayati",
-      author: "Vishnu Khandekar",
-      cover: "/books/yayati.jpg",
-      link: "https://www.goodreads.com/book/show/7607918-yayati",
+      title: "Project Hail Mary",
+      author: "Andy Weir",
+      cover: "/books/hail.jpg",
+      link: "https://www.goodreads.com/book/show/54493401-project-hail-mary?ac=1",
     },
   ],
   favorites: [
