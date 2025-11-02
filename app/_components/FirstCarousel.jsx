@@ -60,6 +60,12 @@ const items2 = [
     title: "Music",
     link: "/music",
   },
+  {
+    id: 10,
+    img: "https://www.marketing91.com/wp-content/uploads/2020/07/How-to-get-work-experience.jpg",
+    title: "Experience",
+    link: "/experience",
+  },
 ];
 
 const Carousel = ({ title, items, hideScrollbar }) => {

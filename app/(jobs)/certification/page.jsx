@@ -5,38 +5,51 @@ import React from "react";
 const certifications = [
   {
     title: "Full-Stack Web Development",
-    provider: "Coursera",
-    link: "https://coursera.org/verify/example1",
-    logo: "/logos/google.png", 
+    provider: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-ab268a0d-b1f6-49bc-9466-585019b510cb/",
+    logo: "/logos/udemy.jpg",
   },
   {
-    title: "JavaScript Algorithms & Data Structures",
+    title: "Responsive Web Design",
     provider: "freeCodeCamp",
-    link: "https://freecodecamp.org/certification/example2",
+    link: "https://www.freecodecamp.org/certification/vincentdkafka/responsive-web-design",
     logo: "/logos/free.png",
   },
   {
-    title: "React - The Complete Guide",
-    provider: "Udemy",
-    link: "https://udemy.com/certificate/example3",
-    logo: "/logos/udemy.jpeg",
+    title: "Front End Development Libraries",
+    provider: "freeCodeCamp",
+    link: "https://www.freecodecamp.org/certification/vincentdkafka/front-end-development-libraries",
+    logo: "/logos/free.png",
   },
   {
-    title: "Python for Everybody",
-    provider: "Coursera",
-    link: "https://coursera.org/verify/example4",
+    title: "Building LLM Applications With Prompt Engineering",
+    provider: "Nvidia",
+    link: "https://learn.nvidia.com/certificates?id=cpSxTQ1LTEyBstOAvVyBEw",
+    logo: "/logos/final.png",
+  },
+  {
+    title: "Deolitte - Cyber Job Simulation",
+    provider: "Forage",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_ZfoLDtcrZJa3WgEJY_1749108142889_completion_certificate.pdf",
+    logo: "/logos/forage.jpg",
+  },
+  {
+    title: "Deolitte - Data Analytics Job Simulation",
+    provider: "Forage",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_ZfoLDtcrZJa3WgEJY_1749111590256_completion_certificate.pdf",
+    logo: "/logos/forage.jpg",
+  },
+  {
+    title:
+      "Build Real World AI Applications with Gemini and Imagen Skill Badge",
+    provider: "Google Cloud",
+    link: "https://www.credly.com/badges/70364bad-af3b-4c91-9f7b-169d8c8e14f7/linked_in_profile",
     logo: "/logos/google.png",
   },
   {
-    title: "Database Design & SQL",
-    provider: "Oracle Academy",
-    link: "https://oracle.com/certification/example5",
-    logo: "/logos/udemy.jpeg",
-  },
-  {
-    title: "UI/UX Design Principles",
-    provider: "Google",
-    link: "https://google.com/certification/example6",
+    title: "Explore Generative AI with the Vertex AI Gemini API",
+    provider: "Google Cloud",
+    link: "https://www.credly.com/badges/4e707226-c3db-43a2-83eb-1dba5a1dd391/linked_in_profile",
     logo: "/logos/google.png",
   },
 ];
@@ -45,7 +58,7 @@ const Certification = () => {
   return (
     <div className="min-h-screen bg-black text-white py-16 px-6 md:px-16">
       <h1 className="text-4xl md:text-5xl text-[#ED1C24] font-bold text-center mb-12">
-         My Certifications
+        My Certifications
       </h1>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
