@@ -37,6 +37,12 @@ const items1 = [
 
 const items2 = [
   {
+    id: 10,
+    img: "https://www.marketing91.com/wp-content/uploads/2020/07/How-to-get-work-experience.jpg",
+    title: "Experience",
+    link: "/experience",
+  },
+  {
     id: 6,
     img: "https://i.pinimg.com/736x/5b/02/fa/5b02fa8529237ce3487f8aaa15bf2d10.jpg",
     title: "Blogs",
@@ -59,12 +65,6 @@ const items2 = [
     img: "https://i.pinimg.com/1200x/ea/13/d5/ea13d5eb1042f3eb9bc42515f6f95152.jpg",
     title: "Music",
     link: "/music",
-  },
-  {
-    id: 10,
-    img: "https://www.marketing91.com/wp-content/uploads/2020/07/How-to-get-work-experience.jpg",
-    title: "Experience",
-    link: "/experience",
   },
 ];
 

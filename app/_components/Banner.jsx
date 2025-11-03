@@ -34,7 +34,7 @@ const Banner = () => {
 
         <div className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-4">
           
-          <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/HarshKurware3.pdf" target="_blank" rel="noopener noreferrer">
             <Button className="h-10 sm:h-12 w-28 sm:w-32 px-6 sm:px-8 text-sm sm:text-base bg-white text-black rounded-sm hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
