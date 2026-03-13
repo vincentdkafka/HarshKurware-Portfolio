@@ -1,23 +1,68 @@
 "use client";
-import { SiReact, SiJavascript, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPython, SiMysql, SiPostgresql, SiDocker, SiVercel, SiFigma, SiAdobephotoshop, SiNextdotjs } from "react-icons/si";
+import {
+  SiReact,
+  SiJavascript,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPython,
+  SiMysql,
+  SiPostgresql,
+  SiDocker,
+  SiVercel,
+  SiFigma,
+  SiAdobephotoshop,
+  SiNextdotjs,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
+import { RiSupabaseFill } from "react-icons/ri";
+import { SiCanva } from "react-icons/si";
+
 
 const skills = {
   Frontend: [
     { name: "React", icon: <SiReact className="w-10 h-10 text-[#61DAFB]" /> },
-    { name: "JavaScript", icon: <SiJavascript className="w-10 h-10 text-yellow-400" /> },
-    { name: "TailwindCSS", icon: <SiTailwindcss className="w-10 h-10 text-sky-400" /> },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="w-10 h-10 text-yellow-400" />,
+    },
+    {
+      name: "TailwindCSS",
+      icon: <SiTailwindcss className="w-10 h-10 text-sky-400" />,
+    },
     { name: "Next.Js", icon: <SiNextdotjs className="w-10 h-10 " /> },
     { name: "Python", icon: <SiPython className="w-10 h-10 text-blue-400" /> },
-    
+    { name: "React Native", icon: <SiReact className="w-10 h-10 text-[#005269]" /> },
   ],
   Backend: [
-    { name: "Node.js", icon: <SiNodedotjs className="w-10 h-10 text-green-500" /> },
-    { name: "Express.js", icon: <SiExpress className="w-10 h-10 text-gray-300" /> },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="w-10 h-10 text-green-500" />,
+    },
+    {
+      name: "Express.js",
+      icon: <SiExpress className="w-10 h-10 text-gray-300" />,
+    },
+    {
+      name: "Java",
+      icon: <FaJava className="w-10 h-10 text-red-900" />,
+    },
   ],
   Database: [
-    { name: "MongoDB", icon: <SiMongodb className="w-10 h-10 text-green-400" /> },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="w-10 h-10 text-green-400" />,
+    },
     { name: "MySQL", icon: <SiMysql className="w-10 h-10 text-blue-400" /> },
-    { name: "PostgreSQL", icon: <SiPostgresql className="w-10 h-10 text-sky-600" /> },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="w-10 h-10 text-sky-600" />,
+    },
+    {
+      name: "Supabase",
+      icon: <RiSupabaseFill className="w-10 h-10 text-green-700" />,
+    },
   ],
   Deployment: [
     { name: "Docker", icon: <SiDocker className="w-10 h-10 text-sky-400" /> },
@@ -25,13 +70,20 @@ const skills = {
   ],
   "UI / UX": [
     { name: "Figma", icon: <SiFigma className="w-10 h-10 text-pink-500" /> },
-    { name: "Photoshop", icon: <SiAdobephotoshop className="w-10 h-10 text-blue-500" /> },
+    {
+      name: "Photoshop",
+      icon: <SiAdobephotoshop className="w-10 h-10 text-blue-500" />,
+    },
+    {
+      name: "Canva",
+      icon: <SiCanva  className="w-10 h-10 text-blue-500" />,
+    },
   ],
 };
 
 const Skills = () => {
   return (
-        <div className="min-h-screen bg-black text-white px-6 md:px-16 py-16">
+    <div className="min-h-screen bg-black text-white px-6 md:px-16 py-16">
       <h1 className="text-4xl font-bold mb-12 text-center text-[#ED1C24]">
         My Skills
       </h1>
