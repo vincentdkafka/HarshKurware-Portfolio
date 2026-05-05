@@ -44,6 +44,8 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <Link href="/contact">
+
         <Image
           src="/profile.png"
           alt="Profile"
@@ -51,6 +53,7 @@ const Navbar = () => {
           height={40}
           className="rounded-full cursor-pointer border-2 border-gray-200"
         />
+        </Link>
 
         <button
           className="md:hidden text-white focus:outline-none"

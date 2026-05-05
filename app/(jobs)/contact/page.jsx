@@ -2,6 +2,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 import React from "react";
 import { Mail, Phone, User, Github, Linkedin, Twitter, Code, PencilLine } from "lucide-react";
+import { SiBuymeacoffee } from "react-icons/si";
 
 const Page = () => {
   const [state, handleSubmit] = useForm("mzzaqarb"); // Only Form ID
@@ -103,10 +104,16 @@ const Page = () => {
 
       {/* Social Links */}
       <div className="flex gap-10 mt-10">
-        {[{
+        {[
+        {
           href: "https://github.com/vincentdkafka",
           icon: <Github />
-        },{
+        },
+        {
+          href: "https://buymeachai.ezee.li/vincentd22",
+          icon: <SiBuymeacoffee />
+        },
+        {
           href: "https://www.linkedin.com/in/harshkurware22/",
           icon: <Linkedin />
         },{
