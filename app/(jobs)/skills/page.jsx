@@ -78,6 +78,10 @@ const skills = {
       name: "Canva",
       icon: <SiCanva  className="w-10 h-10 text-blue-500" />,
     },
+      {
+      name: "Illustrator",
+      icon: <SiCanva  className="w-10 h-10 text-blue-500" />,
+    },
   ],
 };
 
